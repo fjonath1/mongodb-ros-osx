@@ -1,0 +1,24 @@
+# -*- mode: python -*-
+
+Import("env")
+
+env.StaticLibrary('options_parser', ['environment.cpp',
+                                     'value.cpp',
+                                     'constraints.cpp',
+                                     'option_section.cpp',
+                                     'option_description.cpp',
+                                     'options_parser.cpp',
+                                     'startup_option_init.cpp',
+                                     'startup_options.cpp',
+                                     ],
+                                    LIBDEPS=['$BUILD_DIR/mongo/bson',
+                                             '$BUILD_DIR/third_party/shim_yaml'
+                                    ])
+
+env.CppUnitTest('options_parser_test',
+                'options_parser_test.cpp',
+                LIBDEPS=['options_parser', '$BUILD_DIR/mongo/unittest/unittest'])
+
+env.CppUnitTest('environment_test',
+                'environment_test.cpp',
+                LIBDEPS=['options_parser', '$BUILD_DIR/mongo/unittest/unittest'])
