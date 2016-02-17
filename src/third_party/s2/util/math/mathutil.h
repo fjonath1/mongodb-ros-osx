@@ -105,6 +105,9 @@ template<typename T> struct MathLimits {
 #endif  //UTIL_MATH_MATHLIMITS_H
 // ========================================================================= //
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wabsolute-value"
+
 class MathUtil {
  public:
 
@@ -745,5 +748,7 @@ bool MathUtil::WithinFractionOrMargin(const T x, const T y,
            (AbsDiff(x, y) <= Max(margin, fraction * Max(Abs(x), Abs(y))));
   }
 }
+
+#pragma clang diagnostic pop
 
 #endif  // UTIL_MATH_MATHUTIL_H__

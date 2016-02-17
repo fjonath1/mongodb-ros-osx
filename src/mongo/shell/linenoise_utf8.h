@@ -17,6 +17,7 @@
 
 #include <boost/smart_ptr/scoped_array.hpp>
 #include <string.h>
+#include <algorithm>
 
 namespace linenoise_utf8 {
 

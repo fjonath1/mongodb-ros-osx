@@ -221,7 +221,7 @@ namespace mongo {
         y1 = coordinates[0].Array()[1].Number();
         x2 = coordinates[coordinates.size() - 1].Array()[0].Number();
         y2 = coordinates[coordinates.size() - 1].Array()[1].Number();
-        return (fabs(x1 - x2) < 1e-6) && fabs(y1 - y2) < 1e-6;
+        return (abs(x1 - x2) < 1e-6) && abs(y1 - y2) < 1e-6;
     }
 
     static bool isGeoJSONPolygonCoordinates(const vector<BSONElement>& coordinates) {

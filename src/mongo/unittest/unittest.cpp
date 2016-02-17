@@ -249,7 +249,7 @@ namespace mongo {
             for ( std::vector<Result*>::iterator i=results.begin(); i!=results.end(); i++ ) {
                 Result* r = *i;
                 log() << r->toString();
-                if ( abs( r->rc() ) > abs( rc ) )
+                if ( std::fabs( r->rc() ) > std::fabs( rc ) )
                     rc = r->rc();
 
                 tests += r->_tests;

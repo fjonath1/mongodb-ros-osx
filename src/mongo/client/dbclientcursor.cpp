@@ -308,9 +308,6 @@ namespace mongo {
     }
 
     DBClientCursor::~DBClientCursor() {
-        if (!this)
-            return;
-
         DESTRUCTOR_GUARD (
 
         if ( cursorId && _ownCursor && ! inShutdown() ) {

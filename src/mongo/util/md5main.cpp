@@ -107,7 +107,7 @@ static int
 do_t_values(void) {
     int i;
     for (i = 1; i <= 64; ++i) {
-        unsigned long v = (unsigned long)(4294967296.0 * fabs(sin((double)i)));
+        unsigned long v = (unsigned long)(4294967296.0 * abs(sin((double)i)));
 
         /*
          * The following nonsense is only to avoid compiler warnings about

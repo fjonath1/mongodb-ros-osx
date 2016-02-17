@@ -435,7 +435,7 @@ namespace mongo {
 
         if (cross_prod >= 1 || cross_prod <= -1) {
             // fun with floats
-            verify(fabs(cross_prod)-1 < 1e-6);
+            verify(std::fabs(cross_prod)-1 < 1e-6);
             return cross_prod > 0 ? 0 : M_PI;
         }
 
@@ -456,8 +456,8 @@ namespace mongo {
         double b = p1.y - p2.y;
 
         // Avoid numerical error if possible...
-        if (a == 0) return abs(b);
-        if (b == 0) return abs(a);
+        if (a == 0) return std::fabs(b);
+        if (b == 0) return std::fabs(a);
 
         return sqrt((a * a) + (b * b));
     }

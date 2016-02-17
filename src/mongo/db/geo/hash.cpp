@@ -586,7 +586,7 @@ namespace mongo {
         if (bx == _params.min)
             bx = _params.max;
 
-        return fabs(ax - bx);
+        return abs(ax - bx);
     }
 
     // Convert from an unsigned in [0, (max-min)*scaling] to [min, max]
